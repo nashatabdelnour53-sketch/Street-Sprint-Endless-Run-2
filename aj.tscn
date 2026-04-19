@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://et8kamh3b2da"]
+
+[ext_resource type="PackedScene" uid="uid://dv1h38ynm7wkv" path="res://Aj.fbx" id="1_2md46"]
+
+[node name="Aj" instance=ExtResource("1_2md46")]
+
+[node name="Skeleton3D" parent="." index="0"]
+bones/0/position = Vector3(-5.29019e-08, 0.832678, 0.00415293)
+bones/13/rotation = Quaternion(8.02741e-08, -2.80887e-05, -8.94888e-07, 1)
+bones/14/rotation = Quaternion(0.21864, 0.0716977, 0.25475, 0.939233)
+bones/16/rotation = Quaternion(-2.86774e-07, -9.20431e-08, -2.73069e-07, 1)
+bones/26/rotation = Quaternion(-4.56851e-08, 7.50919e-06, -2.15567e-07, 1)
+bones/27/rotation = Quaternion(-4.13054e-07, -7.55445e-06, -8.42278e-08, 1)
+bones/28/rotation = Quaternion(1.20382e-07, 8.94006e-08, -4.65039e-07, 1)
+bones/38/rotation = Quaternion(-3.50579e-08, -0.000360906, 1.00398e-06, 1)
+bones/39/rotation = Quaternion(0.219233, -0.0687794, -0.254241, 0.939451)
+bones/41/rotation = Quaternion(-2.90619e-07, 1.31636e-07, -5.97727e-09, 1)
+bones/45/rotation = Quaternion(1.42317e-07, -2.97852e-08, 2.39468e-07, 1)
+bones/49/rotation = Quaternion(3.55496e-07, -2.97319e-08, -2.44328e-07, 1)
+bones/53/rotation = Quaternion(-3.17952e-07, -1.47407e-08, 5.32364e-08, 1)
+bones/57/rotation = Quaternion(-4.82629e-07, 8.93732e-08, -4.57186e-07, 1)
+bones/71/rotation = Quaternion(2.60275e-06, 0.00839055, 0.999965, 0.000356507)
+bones/72/rotation = Quaternion(-0.0499841, -2.3969e-05, 0.000709565, 0.99875)
+bones/73/rotation = Quaternion(0.396119, 0.018869, -0.0218477, 0.917745)
+bones/76/rotation = Quaternion(-0.0180705, 0.35759, 0.933438, -0.0222832)
+bones/77/rotation = Quaternion(-2.69661e-06, 0.0083913, 0.999965, -0.000369572)
+bones/78/rotation = Quaternion(-0.0499861, 2.49546e-05, -0.000738741, 0.99875)
+bones/79/rotation = Quaternion(0.396121, -0.0188631, 0.0218622, 0.917744)
+
+[node name="AnimationPlayer" parent="." index="2"]
+audio_max_polyphony = 33
+autoplay = "mixamo_com"

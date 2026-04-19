@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://50dql4nr01fh"]
+
+[ext_resource type="Script" path="res://scenes/scripts/player_1.gd" id="1_fdifp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gt3ni"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_srfx5"]
+sky_material = SubResource("ProceduralSkyMaterial_gt3ni")
+
+[sub_resource type="Environment" id="Environment_fvnul"]
+background_mode = 2
+sky = SubResource("Sky_srfx5")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_530ub"]
+albedo_color = Color(1, 0.587663, 0.281934, 1)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_86nup"]
+size = Vector3(10, 1, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_deg2c"]
+size = Vector3(10, 1, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xa4d4"]
+size = Vector3(0.4, 1.0585, 0.539917)
+
+[node name="prototype" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fvnul")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.118454, 0.0878515, 1.2788)
+material_override = SubResource("StandardMaterial3D_530ub")
+mesh = SubResource("BoxMesh_86nup")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_deg2c")
+
+[node name="player1" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.634663, -0.31529, 0)
+script = ExtResource("1_fdifp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player1"]
+transform = Transform3D(-0.999138, -0.0415095, 0, 0.0415095, -0.999138, 0, 0, 0, 1, -0.470473, 1.48057, 1.22539)
+shape = SubResource("BoxShape3D_xa4d4")
+
+[node name="Camera3D" type="Camera3D" parent="player1"]
+transform = Transform3D(1, 0, 0, 0, 0.96717, 0.254129, 0, -0.254129, 0.96717, -0.617542, 4.38389, 8.9691)
